@@ -146,7 +146,7 @@ class LanguageSource extends \yii\db\ActiveRecord
      */
     public function getLanguageTranslates()
     {
-        return $this->hasMany(LanguageTranslate::className(), ['id' => 'id']);
+        return $this->hasMany(LanguageTranslate::className(), ['id' => 'id'])->indexBy('language');
     }
 
     /**
