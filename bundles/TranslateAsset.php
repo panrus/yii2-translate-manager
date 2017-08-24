@@ -5,13 +5,14 @@ namespace lajax\translatemanager\bundles;
 use yii\web\AssetBundle;
 
 /**
- * Translation asset bundle
- * 
+ * Contains css files necessary for modify translations on the backend.
+ *
  * @author Lajos Molnár <lajax.m@gmail.com>
+ *
  * @since 1.0
  */
-class TranslateAsset extends AssetBundle {
-
+class TranslateAsset extends AssetBundle
+{
     /**
      * @inheritdoc
      */
@@ -24,5 +25,4 @@ class TranslateAsset extends AssetBundle {
         'stylesheets/helpers.css',
         'stylesheets/translate.css',
     ];
-
 }

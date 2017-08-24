@@ -9,12 +9,13 @@ use lajax\translatemanager\models\LanguageSource;
 
 /**
  * Generator class for producing JavaScript files containing language elements.
- * 
+ *
  * @author Lajos Molnár <lajax.m@gmail.com>
+ *
  * @since 1.0
  */
-class Generator {
-
+class Generator
+{
     /**
      * Location of generated language files.
      */
@@ -39,7 +40,8 @@ class Generator {
      * @param \lajax\translatemanager\Module $module
      * @param string $language_id Language of the file to be generated.
      */
-    public function __construct($module, $language_id) {
+    public function __construct($module, $language_id)
+    {
         $this->_languageId = $language_id;
         $this->_basePath = Yii::getAlias($module->tmpDir);
         if (!is_dir($this->_basePath)) {
@@ -60,20 +62,23 @@ class Generator {
 
     /**
      * Generating JavaScript language file.
+     *
      * @return int
+     *
      * @deprecated since version 1.4
      */
-    public function generate() {
-
+    public function generate()
+    {
         return $this->run();
     }
 
     /**
      * Generating JavaScript language file.
+     *
      * @return int
      */
-    public function run() {
-
+    public function run()
+    {
         $this->_generateJSFile();
 
         return count($this->_languageItems);
@@ -82,7 +87,8 @@ class Generator {
     /**
      * Creating JavaScript language file in current language.
      */
-    private function _generateJSFile() {
+    private function _generateJSFile()
+    {
         $this->_loadLanguageItems();
 
         $data = [];
@@ -98,28 +104,30 @@ class Generator {
     /**
      * Loads language elements in JavaScript category.
      */
-    private function _loadLanguageItems() {
+    private function _loadLanguageItems()
+    {
         $this->_languageItems = LanguageSource::find()
-                ->joinWith(['languageTranslate' => function ($query) {
-                        $query->where(['language' => $this->_languageId]);
-                    }
-                ])
-                ->where(['category' => Scanner::CATEGORY_JAVASCRIPT])
-                ->all();
+            ->joinWith(['languageTranslate' => function ($query) {
+                $query->where(['language' => $this->_languageId]);
+            },
+            ])
+            ->where(['category' => Scanner::CATEGORY_JAVASCRIPT])
+            ->all();
     }
 
     /**
      * @return string returns the language id of the translation.
      */
-    public function getLanguageId() {
+    public function getLanguageId()
+    {
         return $this->_languageId;
     }
 
     /**
      * @param string $language_id Stores the language id of the translation.
      */
-    public function setLanguageId($language_id) {
+    public function setLanguageId($language_id)
+    {
         $this->_languageId = $language_id;
     }
-
 }

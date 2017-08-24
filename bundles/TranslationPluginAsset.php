@@ -5,13 +5,14 @@ namespace lajax\translatemanager\bundles;
 use yii\web\AssetBundle;
 
 /**
- * Translation Plugin asset bundle
- * 
+ * Contains javascript files necessary for translating javascript messages on the client side (`lajax.t()` calls).
+ *
  * @author Lajos Molnár <lajax.m@gmail.com>
+ *
  * @since 1.0
  */
-class TranslationPluginAsset extends AssetBundle {
-
+class TranslationPluginAsset extends AssetBundle
+{
     /**
      * @inheritdoc
      */
@@ -31,5 +32,4 @@ class TranslationPluginAsset extends AssetBundle {
     public $depends = [
         'lajax\translatemanager\bundles\LanguageItemPluginAsset',
     ];
-
 }

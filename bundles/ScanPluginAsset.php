@@ -5,13 +5,14 @@ namespace lajax\translatemanager\bundles;
 use yii\web\AssetBundle;
 
 /**
- * Scan Plugin asset bundle
- * 
+ * Contains javascript files necessary for message scan on the backend.
+ *
  * @author Lajos Molnár <lajax.m@gmail.com>
+ *
  * @since 1.4
  */
-class ScanPluginAsset extends AssetBundle {
-
+class ScanPluginAsset extends AssetBundle
+{
     /**
      * @inheritdoc
      */
@@ -31,5 +32,4 @@ class ScanPluginAsset extends AssetBundle {
         'yii\web\JqueryAsset',
         'lajax\translatemanager\bundles\TranslationPluginAsset',
     ];
-
 }

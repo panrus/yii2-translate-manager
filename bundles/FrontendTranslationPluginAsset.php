@@ -5,13 +5,14 @@ namespace lajax\translatemanager\bundles;
 use yii\web\AssetBundle;
 
 /**
- * FrontendTranslation Plugin asset bundle
- * 
+ * Contains javascript files necessary for modify translations on the live site (frontend translation).
+ *
  * @author Lajos Molnár <lajax.m@gmail.com>
+ *
  * @since 1.2
  */
-class FrontendTranslationPluginAsset extends AssetBundle {
-
+class FrontendTranslationPluginAsset extends AssetBundle
+{
     /**
      * @inheritdoc
      */
@@ -33,5 +34,4 @@ class FrontendTranslationPluginAsset extends AssetBundle {
         'yii\jui\JuiAsset',
         'lajax\translatemanager\bundles\TranslationPluginAsset',
     ];
-
 }

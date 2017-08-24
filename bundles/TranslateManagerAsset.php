@@ -5,13 +5,14 @@ namespace lajax\translatemanager\bundles;
 use yii\web\AssetBundle;
 
 /**
- * TranslateManager asset bundle
- * 
+ * Contains css files necessary for backend interface.
+ *
  * @author Lajos Molnar <lajax.m@gmail.com>
+ *
  * @since 1.0
  */
-class TranslateManagerAsset extends AssetBundle {
-
+class TranslateManagerAsset extends AssetBundle
+{
     /**
      * @inheritdoc
      */
@@ -31,5 +32,4 @@ class TranslateManagerAsset extends AssetBundle {
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
     ];
-
 }
